@@ -1,0 +1,12 @@
+{
+    "autoload": {
+        "psr-0": {
+            "LinguaLeo": "src/"
+        }
+    },
+
+    "require": {
+        "silex/silex": "~1.1",
+	"messaged/php-mime-mail-parser": "dev-master"
+    }
+}
