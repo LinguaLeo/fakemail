@@ -1,4 +1,11 @@
 {
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/plancake/official-library-php-email-parser"
+        }
+    ],
+
     "autoload": {
         "psr-0": {
             "LinguaLeo": "src/"
@@ -7,6 +14,7 @@
 
     "require": {
         "silex/silex": "~1.1",
-	"messaged/php-mime-mail-parser": "dev-master"
+	    "Plancake/EmailParser": "dev-master",
+        "twig/twig": ">=1.8,<2.0-dev"
     }
 }
