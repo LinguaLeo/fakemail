@@ -32,6 +32,6 @@ class FileScannerService
 
     public function getFullFilePath($dirname, $filename)
     {
-        return $this->baseDir . DIRECTORY_SEPARATOR . $dirname . DIRECTORY_SEPARATOR . $filename;
+        return $this->baseDir . DIRECTORY_SEPARATOR . $dirname . DIRECTORY_SEPARATOR . $filename . '.txt';
     }
 } 

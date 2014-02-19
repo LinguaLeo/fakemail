@@ -2,7 +2,7 @@
  * -- BASE STYLES --
  * Most of these are inherited from Base, but I want to change a few.
  */
-body {
+html body {
     color: #333;
 }
 
@@ -89,7 +89,9 @@ a {
     text-align: left;
 }
 #nav .pure-menu a:hover,
-#nav .pure-menu a:focus {
+#nav .pure-menu a:focus,
+#nav .pure-menu .pure-menu-selected
+{
     background: rgb(55, 60, 90);
 }
 #nav .pure-menu a {
@@ -162,7 +164,7 @@ a {
 }
 
 /* Email Content Styles */
-.email-content-header, .email-content-body, .email-content-footer {
+.email-content-header, .email-content-body, .email-content-footer, .email-content-text, .email-content-source {
     padding: 1em 2em;
 }
 .email-content-header {
@@ -170,9 +172,11 @@ a {
 }
 
 .email-content-title {
+    color: #333;
     margin: 0.5em 0 0;
 }
 .email-content-subtitle {
+    color: #333;
     font-size: 1em;
     margin: 0;
     font-weight: normal;
@@ -191,6 +195,17 @@ a {
 .email-avatar {
     width: 40px;
     height: 40px;
+}
+
+.email-content-body, .email-content-text, .email-content-source {
+    color: #333;
+}
+
+.email-content-text pre, .email-content-source pre {
+    background-color: #EEE;
+    border: 1px solid #999;
+    padding: 1em 2em;
+    border-radius: 5px;
 }
 
 

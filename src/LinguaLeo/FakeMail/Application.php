@@ -1,11 +1,13 @@
 <?php
 namespace LinguaLeo\FakeMail;
 
+use LinguaLeo\FakeMail\Provider\ControllerServiceProvider;
 use LinguaLeo\FakeMail\Provider\FileScannerServiceProvider;
 use LinguaLeo\FakeMail\Provider\MailFactoryServiceProvider;
 use LinguaLeo\FakeMail\Traits\FileScannerTrait;
 use LinguaLeo\FakeMail\Traits\MailFactoryTrait;
 use Silex\Application\TwigTrait;
+use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 
 class Application extends \Silex\Application
@@ -32,6 +34,10 @@ class Application extends \Silex\Application
     {
         $this->register(new FileScannerServiceProvider());
         $this->register(new MailFactoryServiceProvider());
+
+        $this->register(new ServiceControllerServiceProvider());
+        $this->register(new ControllerServiceProvider());
+
         $this->register(new TwigServiceProvider(), array(
                 'twig.path' => __DIR__.'/../../../view'
             )

@@ -1,7 +1,7 @@
 <?php
 namespace LinguaLeo\FakeMail\Service;
 
-use PlancakeEmailParser;
+use LinguaLeo\FakeMail\Model\EmailParser;
 
 class MailFactoryService
 {
@@ -12,6 +12,6 @@ class MailFactoryService
 
     public function getParsedMail($text)
     {
-        return  new PlancakeEmailParser($text);
+        return new EmailParser($text);
     }
 } 
