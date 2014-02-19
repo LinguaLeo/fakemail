@@ -1,6 +1,7 @@
 <?php
 namespace LinguaLeo\FakeMail\Controller;
 
+use LinguaLeo\FakeMail\Model\EmailMessage;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class InboxController
@@ -28,9 +29,9 @@ class InboxController
             throw new \RuntimeException('Mail directory is empty');
         }
 
-        list($url, $fullPath) = each($dirs);
+        $dir = reset($dirs);
 
-        return new RedirectResponse($url);
+        return new RedirectResponse($dir['link']);
     }
 
     public function directoryAction($dirname)
@@ -46,7 +47,7 @@ class InboxController
     {
         $dirs = $this->getFormattedDirectoryList($dirname);
         $files = $this->getFormattedFileList($dirname, $filename);
-        $mail = $this->getFromattedMail($dirname, $filename);
+        $mail = $this->getFormattedMail($dirname, $filename);
 
         return $this->twig->render('email.twig', ['dirs' => $dirs, 'files' => $files, 'mail' => $mail]);
 
@@ -56,7 +57,7 @@ class InboxController
      * @param $dirname
      * @return array
      */
-    private function getFormattedDirectoryList($dirname)
+    private function getFormattedDirectoryList($dirname = null)
     {
         $dirs = [];
         foreach ($this->fileScannerService->getDirectoryList() as $dirName) {
@@ -96,9 +97,9 @@ class InboxController
     /**
      * @param $dirname
      * @param $filename
-     * @return \PlancakeEmailParser
+     * @return EmailMessage
      */
-    private function getFromattedMail($dirname, $filename)
+    private function getFormattedMail($dirname, $filename)
     {
         $mail = $this->mailFactoryService->getParsedMailFromFile(
             $this->fileScannerService->getFullFilePath($dirname, $filename)
@@ -109,7 +110,9 @@ class InboxController
             'subject' => $mail->getSubject(),
             'HTMLBody' => $mail->getHTMLBody(),
             'text' => $mail->getPlainBody(),
-            'source' => $mail->getSource()
+            'source' => $mail->getSourceCode(),
+            'from' =>  $mail->getFrom(),
+            'cc' => $mail->getCC()
         ];
     }
 

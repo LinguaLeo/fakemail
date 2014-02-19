@@ -3,52 +3,8 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "52cbe4ef78d6954a7d71a85887ab47e9",
+    "hash": "23ae30a63e14912338ee461a94e5db6b",
     "packages": [
-        {
-            "name": "Plancake/EmailParser",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/plancake/official-library-php-email-parser.git",
-                "reference": "2108a328221b2994ab4ed16e608dcfbe7937d57e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/plancake/official-library-php-email-parser/zipball/2108a328221b2994ab4ed16e608dcfbe7937d57e",
-                "reference": "2108a328221b2994ab4ed16e608dcfbe7937d57e",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "PlancakeEmailParser": "."
-                }
-            },
-            "license": [
-                "GPLv3"
-            ],
-            "authors": [
-                {
-                    "name": "Daniele Occhipinti",
-                    "email": "dan@plancake.com"
-                }
-            ],
-            "description": "Plancake Email Parser is a simple emailparser for php",
-            "homepage": "http://www.plancake.com",
-            "keywords": [
-                "email",
-                "parser"
-            ],
-            "support": {
-                "source": "https://github.com/plancake/official-library-php-email-parser/tree/master",
-                "issues": "https://github.com/plancake/official-library-php-email-parser/issues"
-            },
-            "time": "2013-09-05 21:02:55"
-        },
         {
             "name": "pimple/pimple",
             "version": "v1.1.1",
@@ -583,6 +539,141 @@
                 "templating"
             ],
             "time": "2014-02-13 10:19:29"
+        },
+        {
+            "name": "zetacomponents/base",
+            "version": "1.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zetacomponents/Base.git",
+                "reference": "52ca69c1de55f3fa4f595779e5bc831da7ee176c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zetacomponents/Base/zipball/52ca69c1de55f3fa4f595779e5bc831da7ee176c",
+                "reference": "52ca69c1de55f3fa4f595779e5bc831da7ee176c",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Sergey Alexeev"
+                },
+                {
+                    "name": "Sebastian Bergmann"
+                },
+                {
+                    "name": "Jan Borsodi"
+                },
+                {
+                    "name": "Raymond Bosman"
+                },
+                {
+                    "name": "Frederik Holljen"
+                },
+                {
+                    "name": "Kore Nordmann"
+                },
+                {
+                    "name": "Derick Rethans"
+                },
+                {
+                    "name": "Vadym Savchuk"
+                },
+                {
+                    "name": "Tobias Schlitt"
+                },
+                {
+                    "name": "Alexandru Stanoi"
+                }
+            ],
+            "description": "The Base package provides the basic infrastructure that all packages rely on. Therefore every component relies on this package.",
+            "homepage": "https://github.com/zetacomponents",
+            "time": "2009-12-21 12:14:16"
+        },
+        {
+            "name": "zetacomponents/mail",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zetacomponents/Mail.git",
+                "reference": "c86480681e5a9b72d276e8954a5feca782d4fd7b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zetacomponents/Mail/zipball/c86480681e5a9b72d276e8954a5feca782d4fd7b",
+                "reference": "c86480681e5a9b72d276e8954a5feca782d4fd7b",
+                "shasum": ""
+            },
+            "require": {
+                "zetacomponents/base": "*"
+            },
+            "require-dev": {
+                "zetacomponents/unit-test": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Sergey Alexeev"
+                },
+                {
+                    "name": "Sebastian Bergmann"
+                },
+                {
+                    "name": "Jan Borsodi"
+                },
+                {
+                    "name": "Raymond Bosman"
+                },
+                {
+                    "name": "Frederik Holljen"
+                },
+                {
+                    "name": "Kore Nordmann"
+                },
+                {
+                    "name": "Derick Rethans"
+                },
+                {
+                    "name": "Vadym Savchuk"
+                },
+                {
+                    "name": "Tobias Schlitt"
+                },
+                {
+                    "name": "Alexandru Stanoi"
+                },
+                {
+                    "name": "Sinisa Dukaric"
+                },
+                {
+                    "name": "Mikko Koppanen"
+                },
+                {
+                    "name": "Christian Michel"
+                }
+            ],
+            "description": "The component allows you construct and/or parse Mail messages conforming to  the mail standard. It has support for attachments, multipart messages and HTML  mail. It also interfaces with SMTP to send mail or IMAP, POP3 or mbox to  retrieve e-mail.",
+            "homepage": "https://github.com/zetacomponents",
+            "time": "2013-11-26 16:03:45"
         }
     ],
     "packages-dev": [
@@ -593,7 +684,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "plancake/emailparser": 20
+        "zetacomponents/mail": 20
     },
     "platform": [
 

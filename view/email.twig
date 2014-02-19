@@ -1,20 +1,20 @@
 {% extends 'layout.twig' %}
 {% block email %}
     <div class="email-content-header pure-g">
-        <div class="pure-u-1-2">
+        <div class="pure-u-1">
             <h1 class="email-content-title">{{ mail.subject }}</h1>
             <p class="email-content-subtitle">
-                To: {{ mail.to|join(', ') }} at <span>3:56pm, April 3, 2012</span>
+                To: <span>{{ mail.to|join(', ') }}</span>
+                From: <span>{{ mail.from }}</span>
             </p>
         </div>
-
-        <div class="email-content-controls pure-u-1-2">
+        <div class="email-content-controls pure-u-1">
             <button data-switch-view="html" class="secondary-button pure-button">HTML</button>
             <button data-switch-view="text" class="secondary-button pure-button">Text</button>
             <button data-switch-view="source" class="secondary-button pure-button">Source</button>
         </div>
-    </div>
 
+    </div>
     <div class="email-content-body">
         {{ mail.HTMLBody|raw }}
     </div>
@@ -26,5 +26,6 @@
     <div class="email-content-source">
         <pre>{{ mail.source }}</pre>
     </div>
+
 
 {% endblock %}

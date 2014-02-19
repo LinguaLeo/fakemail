@@ -4,8 +4,9 @@ namespace LinguaLeo\FakeMail\Provider;
 
 use LinguaLeo\FakeMail\Service\FileScannerService;
 use Silex\Application;
+use Silex\ServiceProviderInterface;
 
-class FileScannerServiceProvider implements \Silex\ServiceProviderInterface
+class FileScannerServiceProvider implements ServiceProviderInterface
 {
 
     /**

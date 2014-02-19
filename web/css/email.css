@@ -178,18 +178,18 @@ a {
 .email-content-subtitle {
     color: #333;
     font-size: 1em;
-    margin: 0;
+    margin: 1em 0 0 0;
     font-weight: normal;
 }
 .email-content-subtitle span {
     color: #999;
 }
 .email-content-controls {
-    margin-top: 2em;
-    text-align: right;
+    margin-top: 1em;
 }
 .email-content-controls .secondary-button {
     margin-bottom: 0.3em;
+    /*padding: 0 1em;*/
 }
 
 .email-avatar {
@@ -208,6 +208,15 @@ a {
     border-radius: 5px;
 }
 
+.email-content-body, .email-content-text, .email-content-source {
+    display: none;
+}
+
+.switch-view-html .email-content-body,
+.switch-view-text .email-content-text,
+.switch-view-source .email-content-source {
+    display: block;
+}
 
 /*
  * -- TABLET (AND UP) MEDIA QUERIES --

@@ -4,8 +4,9 @@ namespace LinguaLeo\FakeMail\Provider;
 
 use LinguaLeo\FakeMail\Service\MailFactoryService;
 use Silex\Application;
+use Silex\ServiceProviderInterface;
 
-class MailFactoryServiceProvider implements \Silex\ServiceProviderInterface
+class MailFactoryServiceProvider implements ServiceProviderInterface
 {
 
     /**
