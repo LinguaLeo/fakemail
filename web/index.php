@@ -3,8 +3,10 @@ use LinguaLeo\FakeMail\Application;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
+$dir = getenv('FAKEMAIL_DIR');
+
 $app = new Application([
-    'mail.directory' => '/home/aobukhov/repos/aobukhov-fakemail/data/mail',
+    'mail.directory' => $dir ? $dir : __DIR__ . '/../data/mail',
     'debug' => true
 ]);
 
