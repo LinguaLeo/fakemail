@@ -5,11 +5,14 @@ use LinguaLeo\FakeMail\Provider\FileScannerServiceProvider;
 use LinguaLeo\FakeMail\Provider\MailFactoryServiceProvider;
 use LinguaLeo\FakeMail\Traits\FileScannerTrait;
 use LinguaLeo\FakeMail\Traits\MailFactoryTrait;
+use Silex\Application\TwigTrait;
+use Silex\Provider\TwigServiceProvider;
 
 class Application extends \Silex\Application
 {
     use FileScannerTrait;
     use MailFactoryTrait;
+    use TwigTrait;
 
     public function __construct(array $values = [])
     {
@@ -29,5 +32,9 @@ class Application extends \Silex\Application
     {
         $this->register(new FileScannerServiceProvider());
         $this->register(new MailFactoryServiceProvider());
+        $this->register(new TwigServiceProvider(), array(
+                'twig.path' => __DIR__.'/../../../view'
+            )
+        );
     }
 } 

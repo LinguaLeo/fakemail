@@ -11,21 +11,40 @@ $app = new Application([
 $app->get('/', function () use ($app) {
         $dirs = [];
         foreach($app->getFileScannerService()->getDirectoryList() as $dirName) {
-            $dirs[basename($dirName)] = $dirName;
+            $dirs['/' . basename($dirName)] = $dirName;
         }
 
-        return '<pre>' . print_r($dirs, true) . '</pre>';
+        if (empty($dirs)) {
+            throw new Exception('Mail directory is empty');
+        }
+
+        list($url, $fullPath) = each($dirs);
+
+        return $app->redirect($url);
     }
 );
 
 
 $app->get('/{dirname}', function ($dirname) use ($app) {
         $dirs = [];
-        foreach($app->getFileScannerService()->getFileList($dirname) as $fileName) {
-            $dirs[pathinfo($fileName)['filename']] = $fileName;
+        foreach($app->getFileScannerService()->getDirectoryList() as $dirName) {
+            $dirs[] = ['link' => '/' . basename($dirName), 'text' => basename($dirName)];
         }
 
-        return '<pre>' . print_r($dirs, true) . '</pre>';
+        $files = [];
+        foreach($app->getFileScannerService()->getFileList($dirname) as $fileName) {
+            $mail = $app->getMailFactoryService()->getParsedMailFromFile($fileName);
+            $files[] = [
+                'link' => '/' . $dirname . '/' . pathinfo($fileName)['filename'],
+                'mail' => [
+                    'to' => $mail->getTo(),
+                    'subject' => @$mail->getSubject(),
+                    'body' => mb_substr(str_replace('*', '', $mail->getPlainBody()), 0, 100) . '&hellip;'
+                ]
+            ];
+        }
+
+        return $app->render('layout.twig', ['dirs' => $dirs, 'files' => $files]);
     }
 );
 
