@@ -6,7 +6,6 @@
     <meta name="description" content="A layout example that shows off a responsive email layout.">
     <title>Fakemail</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
-    <link rel="stylesheet" href="/css/pure-min.css">
     <link rel="stylesheet" href="/css/email.css">
 </head>
 <body>
@@ -64,18 +63,7 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="/js/jquery-2.1.0.min.js" ></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('[data-switch-view]').click(function(e) {
-            $('[data-container-switch-view]')
-                    .removeClass('switch-view-html')
-                    .removeClass('switch-view-text')
-                    .removeClass('switch-view-source')
-                    .addClass('switch-view-' + $(e.target).attr('data-switch-view'));
-        });
-
-    });
-</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js" ></script>
+<script src="/js/script.js" ></script>
 </body>
 </html>
