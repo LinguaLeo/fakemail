@@ -1,17 +1,24 @@
 {
+    "name": "lingualeo/fakemail",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LinguaLeo",
+            "email": "backend@lingualeo.com"
+        }
+    ],
+    "minimum-stability": "stable",
     "repositories": [
         {
             "type": "vcs",
             "url": "https://github.com/plancake/official-library-php-email-parser"
         }
     ],
-
     "autoload": {
         "psr-0": {
-            "LinguaLeo": "src/"
+            "LinguaLeo\\FakeMail": "src/"
         }
     },
-
     "require": {
         "silex/silex": "~1.1",
         "zetacomponents/mail": "dev-master",
