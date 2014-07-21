@@ -7,7 +7,7 @@ use LinguaLeo\FakeMail\Application;
 $dir = getenv('FAKEMAIL_DIR');
 
 $app = new Application([
-    'mail.directory' => $dir ?: __DIR__ . '/../data/mail',
+    'mail.directory' => $dir ?: __DIR__ . '/../data',
     'debug' => true
 ]);
 
