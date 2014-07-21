@@ -25,7 +25,7 @@ class FileScannerService
     {
         return new DirectoryIterator(
             $this->baseDir . DIRECTORY_SEPARATOR . $dir,
-            'f', '^letter-\d{4}-\d{2}-\d{2}-\d{2}-\d{2}-\d{2}-\d+-\d+\.txt$',
+            'f', '^letter-\d{4}-\d{2}-\d{2}-\d{2}-\d{2}-\d{2}-\d+.txt$',
             SORT_DESC
         );
     }
@@ -34,4 +34,4 @@ class FileScannerService
     {
         return $this->baseDir . DIRECTORY_SEPARATOR . $dirname . DIRECTORY_SEPARATOR . $filename . '.txt';
     }
-} 
+}
