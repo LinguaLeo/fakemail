@@ -8,12 +8,6 @@
         }
     ],
     "minimum-stability": "stable",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/plancake/official-library-php-email-parser"
-        }
-    ],
     "autoload": {
         "psr-0": {
             "LinguaLeo\\FakeMail": "src/"
