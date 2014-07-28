@@ -139,6 +139,11 @@ a {
     border-bottom: 1px solid #ddd;
     border-left: 6px solid transparent;
 }
+
+a.email-item {
+    display: block;
+}
+
 .email-avatar {
     border-radius: 3px;
     margin-right: 0.5em;
